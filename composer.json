@@ -11,7 +11,8 @@
         "laravel/framework": "^8.54",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "nztim/mailchimp": "^4.3"
+        "nztim/mailchimp": "^4.3",
+        "sendgrid/sendgrid": "^7.9"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
