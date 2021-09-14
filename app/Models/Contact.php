@@ -4,32 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Contact extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $table = 'contacts';
 
     protected $fillable = [
+       'mailchimp_id',
        'email',
        'first_name',
-       'last_name'
+       'last_name',
+       'sent'
     ];
-
-    /**
-     * Get the Sendgrid contact associated
-     */
-    public function sendgridContact()
-    {
-        return $this->hasOne(SendgridContact::class);
-    }
-
-    /**
-     * Get the Mailchimp contact associated
-     */
-    public function mailchimpContact()
-    {
-        return $this->hasOne(MailchimpContact::class);
-    }
 }

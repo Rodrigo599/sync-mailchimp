@@ -15,9 +15,12 @@ class CreateContactsTable extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
+            $table->string('mailchimp_id')->unique();
             $table->string("email");
             $table->string('first_name');
             $table->string('last_name');
+            $table->boolean('sent')->default(false);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
