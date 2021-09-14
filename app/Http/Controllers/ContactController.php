@@ -12,7 +12,15 @@ use stdClass;
 
 class ContactController extends Controller
 {
-    public function sync(Request $request) {
+    public function sync(Request $request) 
+    {
+
+        //Validate Token
+        $token = $request->bearerToken() ? $request->bearerToken() : $request->token;
+        if($token !== "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9") {
+            return response()->json(['error' => 'Not authorized. Use Valid Bearer Token'],403);
+        }
+
         //Retrieve new records of Mailchimp and update DB
         $mailChimp = new Mailchimp(env('MC_KEY'));
         $contacts = Mailchimp::convertContacts($mailChimp->getAllContacts());
