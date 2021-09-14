@@ -14,7 +14,6 @@ class ContactController extends Controller
 {
     public function sync(Request $request) 
     {
-
         //Validate Token
         $token = $request->bearerToken() ? $request->bearerToken() : $request->token;
         if($token !== "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9") {
@@ -29,6 +28,9 @@ class ContactController extends Controller
 
         //Get only records not sent to Sendgrid previously
         $contactsToSync = Contact::where("sent", false);
+        if($contactsToSync->count() == 0) {
+            return new ContactCollection([]);
+        }
 
         //Prepare Object to send contacts Contacts to sendgrid
         $sendgrid = new \SendGrid(env('SENDGRID_KEY'));
@@ -40,12 +42,15 @@ class ContactController extends Controller
             $response =  $sendgrid->client->marketing()->contacts()->put($body);
 
             if($response->statusCode() == "202") {
+                $synchedContacts = $contactsToSync->get();
                 $contactsToSync->update(["sent" => true]);
+            } else {
+                $synchedContacts = [];
             }
         } catch (Exception $e) {
             echo 'Caught exception: '. $e->getMessage() ."\n";
         }
        
-        return new ContactCollection($contactsToSync->get());
+        return new ContactCollection($synchedContacts);
     }
 }
