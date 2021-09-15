@@ -1,8 +1,13 @@
 <b>Overview</b>
 
+System that synchronizes contact information (email, first name and last name) from Mailchimp to Sendgrid.
+
+
+<b>Important links</b>
+
 Technical Design:<br>
 https://docs.google.com/document/d/13MlQGukTIWQB6jSHmWITzd_F9qEkJxlcrZt7AdorI4A/edit?usp=sharing
-<br>
+<br><br>
 Demo Link:<br>
 https://trio-mailchimp-sync.herokuapp.com/
 <br>
@@ -23,7 +28,7 @@ sendgrid/sendgrid:
 Oficial PHP SDK for Sendgrid;
 
 
-<b>Project Setup</b>
+<b>Project Setup - Deploy locally</b>
 
 Clone project from github
 
