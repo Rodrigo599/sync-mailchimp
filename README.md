@@ -40,7 +40,7 @@ Clone project from github
 
 Run “composer install” to install dependencies
 
-Edit .env file to reflect database connections and API tokens for Mailchimp (MC_KEY) and Sendgrid (SENDGRID_KEY)
+Edit .env example to .env only and to reflect database connections and API tokens for Mailchimp (MC_KEY) and Sendgrid (SENDGRID_KEY)
 
 Run “php artisan migrate” to run migrations.
 
