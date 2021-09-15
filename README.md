@@ -1,9 +1,18 @@
+<b>Overview</b>
+
+Technical Design:<br>
+https://docs.google.com/document/d/13MlQGukTIWQB6jSHmWITzd_F9qEkJxlcrZt7AdorI4A/edit?usp=sharing
+<br>
+Demo Link:<br>
+https://trio-mailchimp-sync.herokuapp.com/
+<br>
+
 <b>Technical Stack & Libraries</b>
 
-For this project, the following stack was used:
-PHP 7.4.18
-Laravel 8
-MySQL 5.7
+For this project, the following stack was used:<br>
+PHP 7.4.18<br>
+Laravel 8<br>
+MySQL 5.7<br>
 
 The following libraries were added via composer:
 
@@ -31,4 +40,4 @@ Use method GET in  “/contacts/sync” endpoint to run synchronization.
 
 IMPORTANT: An API key is needed for added security, since we do not want to trigger synchronization for random accesses.
 
-API KEY: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9
+API KEY: <b>eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9</b>
