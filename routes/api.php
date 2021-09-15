@@ -16,4 +16,9 @@ use App\Http\Controllers\ContactController;
 |
 */
 
+Route::get('/', function() {
+    return "Welcome to Mailchimp synchornization APP with Sendgrid. We have currently only /contacts/sync endpoint working.";
+});
+
+
 Route::get('/contacts/sync', [ContactController::class, 'sync']);
