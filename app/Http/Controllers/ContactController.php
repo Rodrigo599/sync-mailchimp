@@ -17,7 +17,7 @@ class ContactController extends Controller
         //Validate Token
         $token = $request->bearerToken() ? $request->bearerToken() : $request->token;
         if($token !== "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9") {
-            return response()->json(['error' => 'Not authorized. Use Valid Bearer Token'],403);
+            return response()->json(['error' => 'Not authorized. Use Valid Bearer Token in Authorization header or as URL query'],403);
         }
 
         //Retrieve new records of Mailchimp and update DB
