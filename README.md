@@ -8,8 +8,14 @@ System that synchronizes contact information (email, first name and last name) f
 Technical Design:<br>
 https://docs.google.com/document/d/13MlQGukTIWQB6jSHmWITzd_F9qEkJxlcrZt7AdorI4A/edit?usp=sharing
 <br><br>
-Demo Link:<br>
+Demo Link: (Use Key below on endpoint)<br>
 https://trio-mailchimp-sync.herokuapp.com/
+<br><br>
+Explanation Video Part 1:<br>
+https://docs.google.com/document/d/13MlQGukTIWQB6jSHmWITzd_F9qEkJxlcrZt7AdorI4A/edit
+<br><br>
+Explanation Video Part 2:<br>
+https://drive.google.com/file/d/1DOivFFdfebkr9It3MgBGQHvP0pms881o/view
 <br>
 
 <b>Technical Stack & Libraries</b>
