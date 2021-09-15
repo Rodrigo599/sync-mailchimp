@@ -7,7 +7,7 @@ use Illuminate\Http\Resources\Json\ResourceCollection;
 class ContactCollection extends ResourceCollection
 {
     public static $wrap = null;
-    
+
     /**
      * Transform the resource collection into an array.
      *
@@ -17,7 +17,7 @@ class ContactCollection extends ResourceCollection
     public function toArray($request)
     {
         return [
-            'syncedContacts' => $this->collection->count(),
+            'synchedContacts' => $this->collection->count(),
             'contacts' => $this->collection,
         ];
     }
